@@ -32,5 +32,11 @@ def create_ticket():
     next_id += 1
     return jsonify(new_ticket), 201
 
+# get all tickets
+@app.route('/tickets', methods=['GET'])
+def get_all_tickets():
+    return jsonify(tickets), 200
+
+
 if __name__ == '__main__':
     app.run(debug=True)
