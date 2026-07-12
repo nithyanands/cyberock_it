@@ -34,13 +34,15 @@ def create_ticket():
     severity = ticket_data.get("severity", "Medium")
     if severity not in allowed_severities:
         return jsonify({"error": f"Invalid severity '{severity}'. Should be one of: {', '.join(allowed_severities)}"}), 400
+
+ 
     
     new_ticket = {
         "ticket_id": next_id,
         "title": ticket_data.get("title"),
         "description": ticket_data.get("description"),
         "severity": severity,
-        "status": ticket_data.get("status", "open"),
+        "status": "open",
         "date_reported": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "reported_by": ticket_data.get("reported_by"),
         "assigned_to": ticket_data.get("assigned_to" , "L1 Ops Team"),
@@ -70,12 +72,30 @@ def get_specific_ticket(ticket_id):
 @app.route('/tickets/<int:ticket_id>', methods=['PUT'])
 def update_ticket(ticket_id):
     ticket_data = request.get_json()
+    allowed_statuses = ["open", "In Progress", "Resolved"]
+    allowed_severities = ["Low", "Medium", "High", "Critical"]
+    
     for ticket in tickets:
         if ticket["ticket_id"] == ticket_id:
+            
+            # Severity validation if provided in the update request
+            if "severity" in ticket_data:
+                new_severity = ticket_data.get("severity")
+                if new_severity not in allowed_severities:
+                    return jsonify({"error": f"Invalid severity '{new_severity}'. Should be one of: {', '.join(allowed_severities)}"}), 400
+                ticket["severity"] = new_severity
+            
+            # Status validation if provided in the update request
+            
+            if "status" in ticket_data:
+                new_status = ticket_data.get("status")
+                if new_status not in allowed_statuses:                
+                    return jsonify({"error": f"Invalid status '{new_status}'. Should be one of: {', '.join(allowed_statuses)}"}), 400
+                ticket["status"] = new_status
+                
+            
             ticket["title"] = ticket_data.get("title", ticket["title"])
             ticket["description"] = ticket_data.get("description", ticket["description"])
-            ticket["severity"] = ticket_data.get("severity", ticket["severity"])
-            ticket["status"] = ticket_data.get("status", ticket["status"])
             ticket["assigned_to"] = ticket_data.get("assigned_to", ticket["assigned_to"])
             return jsonify(ticket), 200
     return jsonify({"error": "Ticket not found"}), 404
