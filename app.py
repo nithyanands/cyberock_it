@@ -62,5 +62,14 @@ def update_ticket(ticket_id):
             return jsonify(ticket), 200
     return jsonify({"error": "Ticket not found"}), 404
 
+# Delete a specific ticket by ID
+@app.route('/tickets/<int:ticket_id>', methods=['DELETE'])
+def delete_ticket(ticket_id):
+    for ticket in tickets:
+        if ticket["ticket_id"] == ticket_id:
+            tickets.remove(ticket)
+            return jsonify({"message": f"Ticket {ticket_id} deleted successfully"}), 200
+    return jsonify({"error": "Ticket not found"}), 404
+    
 if __name__ == '__main__':
     app.run(debug=True)
