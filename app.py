@@ -17,15 +17,26 @@ def home():
 def create_ticket():
     global next_id
     ticket_data = request.get_json()
+    
+# Ensure all required fields available in the ticket creation request
+
+    required_fields = ["title", "description", "reported_by"]
+    missing_fields = []
+    for field in required_fields:
+        if not ticket_data.get(field):
+            missing_fields.append(field)
+    if missing_fields:
+        return jsonify({"error": f"Missing required fields: {', '.join(missing_fields)}"}), 400
+    
     new_ticket = {
         "ticket_id": next_id,
         "title": ticket_data.get("title"),
         "description": ticket_data.get("description"),
-        "severity": ticket_data.get("severity"),
+        "severity": ticket_data.get("severity" , "Medium"),
         "status": ticket_data.get("status", "open"),
         "date_reported": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "reported_by": ticket_data.get("reported_by"),
-        "assigned_to": ticket_data.get("assigned_to"),
+        "assigned_to": ticket_data.get("assigned_to" , "L1 Ops Team"),
         "closed_date": None
     }
     tickets.append(new_ticket)
