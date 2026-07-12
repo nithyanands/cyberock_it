@@ -27,12 +27,19 @@ def create_ticket():
             missing_fields.append(field)
     if missing_fields:
         return jsonify({"error": f"Missing required fields: {', '.join(missing_fields)}"}), 400
+
+# Ensure Severity input has to be one of the allowed values
+
+    allowed_severities = ["Low", "Medium", "High", "Critical"]
+    severity = ticket_data.get("severity", "Medium")
+    if severity not in allowed_severities:
+        return jsonify({"error": f"Invalid severity '{severity}'. Should be one of: {', '.join(allowed_severities)}"}), 400
     
     new_ticket = {
         "ticket_id": next_id,
         "title": ticket_data.get("title"),
         "description": ticket_data.get("description"),
-        "severity": ticket_data.get("severity" , "Medium"),
+        "severity": severity,
         "status": ticket_data.get("status", "open"),
         "date_reported": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "reported_by": ticket_data.get("reported_by"),
