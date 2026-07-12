@@ -37,6 +37,13 @@ def create_ticket():
 def get_all_tickets():
     return jsonify(tickets), 200
 
+# get a specific ticket by ID
+@app.route('/tickets/<int:ticket_id>',methods=['GET'])
+def get_specific_ticket(ticket_id):
+    for ticket in tickets:
+        if ticket["ticket_id"] == ticket_id:
+            return jsonify(ticket), 200
+    return jsonify({"error": "Ticket not found"}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
