@@ -35,8 +35,12 @@ def create_ticket():
     if severity not in allowed_severities:
         return jsonify({"error": f"Invalid severity '{severity}'. Should be one of: {', '.join(allowed_severities)}"}), 400
 
- 
-    
+# Ensure Assigned_to field is optional and if not provided, default to "L1 Ops Team"
+    allowed_assignees = ["Security Team", "Infrastructure Team", "Frontend Team", "Backend Team", "L1 Ops Team", "Network Ops"]
+    assigned_to = ticket_data.get("assigned_to") or "L1 Ops Team"
+    if assigned_to not in allowed_assignees:
+        return jsonify({"error": f"Invalid assigned_to '{assigned_to}'. Should be one of: {', '.join(allowed_assignees)}"}), 400
+
     new_ticket = {
         "ticket_id": next_id,
         "title": ticket_data.get("title"),
@@ -45,7 +49,7 @@ def create_ticket():
         "status": "open",
         "date_reported": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "reported_by": ticket_data.get("reported_by"),
-        "assigned_to": ticket_data.get("assigned_to" , "L1 Ops Team"),
+        "assigned_to": assigned_to,
         "closed_date": None
     }
     tickets.append(new_ticket)
@@ -74,6 +78,7 @@ def update_ticket(ticket_id):
     ticket_data = request.get_json()
     allowed_statuses = ["open", "In Progress", "Resolved"]
     allowed_severities = ["Low", "Medium", "High", "Critical"]
+    allowed_assignees = ["Security Team", "Infrastructure Team", "Frontend Team", "Backend Team", "L1 Ops Team", "Network Ops"]
     
     for ticket in tickets:
         if ticket["ticket_id"] == ticket_id:
@@ -85,6 +90,13 @@ def update_ticket(ticket_id):
                     return jsonify({"error": f"Invalid severity '{new_severity}'. Should be one of: {', '.join(allowed_severities)}"}), 400
                 ticket["severity"] = new_severity
             
+            # Assigned_to validation if provided in the update request
+            if "assigned_to" in ticket_data:
+                new_assignee = ticket_data.get("assigned_to")
+                if new_assignee not in allowed_assignees:
+                    return jsonify({"error": f"Invalid assigned_to '{new_assignee}'. Should be one of: {', '.join(allowed_assignees)}"}), 400
+                ticket["assigned_to"] = new_assignee
+                                      
             # Status validation if provided in the update request
             
             if "status" in ticket_data:
@@ -93,10 +105,15 @@ def update_ticket(ticket_id):
                     return jsonify({"error": f"Invalid status '{new_status}'. Should be one of: {', '.join(allowed_statuses)}"}), 400
                 ticket["status"] = new_status
                 
+                #When status is updated to "Resolved", set the closed_date to the current date and time
+                if new_status == "Resolved":
+                    ticket["closed_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                else:
+                    ticket["closed_date"] = None
             
+                        
             ticket["title"] = ticket_data.get("title", ticket["title"])
             ticket["description"] = ticket_data.get("description", ticket["description"])
-            ticket["assigned_to"] = ticket_data.get("assigned_to", ticket["assigned_to"])
             return jsonify(ticket), 200
     return jsonify({"error": "Ticket not found"}), 404
 
