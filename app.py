@@ -60,7 +60,19 @@ def create_ticket():
 
 @app.route('/tickets', methods=['GET'])
 def get_all_tickets():
-    return jsonify(tickets), 200
+    results = tickets
+# Enable search functionality for title and description fields
+    search = request.args.get('search')
+    if search:
+        filtered_results = []
+        for t in results:
+            title_match = search.lower() in t["title"].lower()
+            description_match = search.lower() in t["description"].lower()
+            if title_match or description_match:
+                filtered_results.append(t)
+        results = filtered_results
+        
+    return jsonify(results), 200
 
 # get a specific ticket by ID
 
