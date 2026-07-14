@@ -1,6 +1,11 @@
 from flask import Flask, jsonify, request
 from datetime import datetime
 app = Flask(__name__)
+
+# app.config['JSON_SORT_KEYS'] had no effect - Flask's official documentation
+# confirms this config key was removed in version 2.3, replaced by
+# app.json.sort_keys. Source: https://flask.palletsprojects.com/en/stable/config/
+
 app.json.sort_keys = False
 
 # In-memory storage for tickets
