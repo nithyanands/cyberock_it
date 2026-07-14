@@ -125,6 +125,25 @@ def delete_ticket(ticket_id):
             tickets.remove(ticket)
             return jsonify({"message": f"Ticket {ticket_id} deleted successfully"}), 200
     return jsonify({"error": "Ticket not found"}), 404
+
+#summary of tickets by severity, status
+
+@app.route('/report/summary', methods=['GET'])
+def get_summary():
+    severity_summary = {}
+    status_summary = {}
+    for ticket in tickets:
+        severity = ticket["severity"]
+        severity_summary[severity] = severity_summary.get(severity, 0) + 1
+        
+        status = ticket["status"]
+        status_summary[status] = status_summary.get(status, 0) + 1
+    summary = {
+        "total_tickets": len(tickets),
+        "severity_summary": severity_summary,
+        "status_summary": status_summary
+    }
+    return jsonify(summary), 200
     
 if __name__ == '__main__':
     app.run(debug=True)
