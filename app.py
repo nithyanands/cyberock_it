@@ -1,9 +1,15 @@
 from flask import Flask, jsonify, request
 from datetime import datetime
 app = Flask(__name__)
+app.json.sort_keys = False
+
 # In-memory storage for tickets
 tickets = []
 next_id = 1
+
+allowed_severities = ["Low", "Medium", "High", "Critical"]
+allowed_statuses = ["open", "In Progress", "Resolved"]
+allowed_assignees = ["Security Team", "Infrastructure Team", "Frontend Team", "Backend Team", "L1 Ops Team", "Network Ops"]
 
 # Test route to check if the API is running and accessible on web and postman
 
@@ -30,13 +36,11 @@ def create_ticket():
 
 # Ensure Severity input has to be one of the allowed values
 
-    allowed_severities = ["Low", "Medium", "High", "Critical"]
     severity = ticket_data.get("severity", "Medium")
     if severity not in allowed_severities:
         return jsonify({"error": f"Invalid severity '{severity}'. Should be one of: {', '.join(allowed_severities)}"}), 400
 
 # Ensure Assigned_to field is optional and if not provided, default to "L1 Ops Team"
-    allowed_assignees = ["Security Team", "Infrastructure Team", "Frontend Team", "Backend Team", "L1 Ops Team", "Network Ops"]
     assigned_to = ticket_data.get("assigned_to") or "L1 Ops Team"
     if assigned_to not in allowed_assignees:
         return jsonify({"error": f"Invalid assigned_to '{assigned_to}'. Should be one of: {', '.join(allowed_assignees)}"}), 400
@@ -114,9 +118,6 @@ def get_specific_ticket(ticket_id):
 @app.route('/tickets/<int:ticket_id>', methods=['PUT'])
 def update_ticket(ticket_id):
     ticket_data = request.get_json()
-    allowed_statuses = ["open", "In Progress", "Resolved"]
-    allowed_severities = ["Low", "Medium", "High", "Critical"]
-    allowed_assignees = ["Security Team", "Infrastructure Team", "Frontend Team", "Backend Team", "L1 Ops Team", "Network Ops"]
     
     for ticket in tickets:
         if ticket["ticket_id"] == ticket_id:
