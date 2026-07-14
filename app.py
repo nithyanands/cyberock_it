@@ -81,6 +81,23 @@ def get_all_tickets():
                 filtered_results.append(t)
         results = filtered_results
 
+# Enable filtering with status if provided in input url
+    status_filter = request.args.get('status')
+    if status_filter:
+        filtered_results = []
+        for t in results:
+            if t['status'] == status_filter:
+                filtered_results.append(t)
+        results = filtered_results
+
+# Enable sorting by severity, status, date_reported, or ticket_id if provided in input url
+
+    sort_by = request.args.get('sort')
+    if sort_by in ['severity', 'status', 'date_reported', 'ticket_id']:
+        def get_sort_value(ticket):
+            return ticket[sort_by]
+        results = sorted(results, key=get_sort_value)
+
     return jsonify(results), 200
 
 # get a specific ticket by ID
