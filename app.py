@@ -72,6 +72,15 @@ def get_all_tickets():
                 filtered_results.append(t)
         results = filtered_results
         
+# Enable filtering with severity if provided in input url
+    severity_filter = request.args.get('severity')
+    if severity_filter:
+        filtered_results = []
+        for t in results:
+            if t['severity'] == severity_filter:
+                filtered_results.append(t)
+        results = filtered_results
+
     return jsonify(results), 200
 
 # get a specific ticket by ID
