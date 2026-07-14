@@ -25,7 +25,7 @@ Each Ticket contains following fields,
 - assigned_to - Ticket ownership
 - close_date - issue resolved date
 
-## Setup instrcutions:
+## Setup instructions:
 1. Clone this repo in local machine
 2. create virtual environment (venv)
 3. Activate venv
@@ -38,7 +38,29 @@ Each Ticket contains following fields,
 |---|---|---|
 | GET | / | Application status |
 | POST | /tickets | Create a new ticket |
-| GET | /tickets | List all tickets |
+| GET | /tickets | List all tickets , supports search, filter and sort using query parameters | |
 | GET | /tickets/<ticket_id> | Get a single ticket by ID |
+| PUT | /tickets/<ticket_id> | Update an existing ticket |
+| DELETE | /tickets/<ticket_id> | Delete a ticket by ID |
+| GET | /report/summary | Get summary of ticket count by severity and status |
 
+## GET /tickets query parameters
+- search - enable search function using title and description
+- severity - enable filter function by severity value
+- status - enable filter function by status value
+- sort - enable sorting by severity, status, date_reported, or ticket_id
 
+All the above options can be used together in the same request, example:
+`GET /tickets?search=team&severity=High&status=open&sort=date_reported`
+
+## Requirements coverage
+- Entry - POST /tickets, checks the following required fields are given: title, description, reported_by
+- Read - GET /tickets and GET /tickets/<id>
+- Update - PUT /tickets/<id>, only fields sent in the request and allowed values from severities,status,assignees
+- Delete - DELETE /tickets/<id>
+- Search - GET /tickets?search=, enables search title and description fields
+- Filtering - GET /tickets?severity= and ?status=, Enables filtering with severity and status, combined with search
+- Sorting - GET /tickets?sort=, Enables sorting by severity, status, date_reported, or ticket_id
+- Reporting - GET /report/summary, gives total tickets and severity/status counts
+- Validation - severity, status and assigned_to only accept values from a allowed values, invalid inputs are returned with error messages.
+- Integrity - ticket_id comes from the server so no duplicates possible, status can only change through update, close_date is set automatically when resolved and cleared if reopened
