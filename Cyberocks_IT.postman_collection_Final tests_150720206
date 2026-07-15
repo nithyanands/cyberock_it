@@ -1,0 +1,2813 @@
+{
+  "info": {
+    "_postman_id": "6db59751-fb37-4d47-8a4f-78a020414987",
+    "name": "Cyberocks_IT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56522699"
+  },
+  "item": [
+    {
+      "name": "App Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000"
+        }
+      },
+      "response": [
+        {
+          "name": "App Status_1507",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:20:30 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "62"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Cyberock Issue Tracker API is test running\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Tickets_Post Data",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Stored XSS on User Dashboard\",\r\n  \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\r\n  \"reported_by\": \"Jason\",\r\n  \"assigned_to\": \"Marketing\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/tickets",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "tickets"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Tickets_Post Data",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Outdated OpenSSL version\",\r\n  \"description\": \"Server running OpenSSL 1.0.2, end-of-life and unpatched\",\r\n  \"severity\": \"Medium\",\r\n  \"reported_by\": \"Nithyanantham\",\r\n  \"assigned_to\": \"Infrastructure Team\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "CREATED",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 11 Jul 2026 19:52:38 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "319"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"Infrastructure Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-11 20:52:38\",\n    \"description\": \"Server running OpenSSL 1.0.2, end-of-life and unpatched\",\n    \"reported_by\": \"Nithyanantham\",\n    \"severity\": \"Medium\",\n    \"status\": \"open\",\n    \"ticket_id\": 2,\n    \"title\": \"Outdated OpenSSL version\"\n}"
+        },
+        {
+          "name": "Tickets_Post Data",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"SQL Injection in login form\",\r\n  \"description\": \"User input not sanitized on login endpoint\",\r\n  \"severity\": \"High\",\r\n  \"reported_by\": \"Nithyanantham\",\r\n  \"assigned_to\": \"Security Team\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "CREATED",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 15:03:47 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "301"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"Security Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-12 16:03:47\",\n    \"description\": \"User input not sanitized on login endpoint\",\n    \"reported_by\": \"Nithyanantham\",\n    \"severity\": \"High\",\n    \"status\": \"open\",\n    \"ticket_id\": 2,\n    \"title\": \"SQL Injection in login form\"\n}"
+        },
+        {
+          "name": "Tickets_Post Data",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\",\r\n  \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\r\n  \"severity\": \"High\",\r\n  \"reported_by\": \"Nithyanantham\",\r\n  \"assigned_to\": \"Infrastructure Team\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "CREATED",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 15:48:33 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "457"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"Infrastructure Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-12 16:48:33\",\n    \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n    \"reported_by\": \"Nithyanantham\",\n    \"severity\": \"High\",\n    \"status\": \"open\",\n    \"ticket_id\": 5,\n    \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\"\n}"
+        },
+        {
+          "name": "Tickets_Validation error",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\",\r\n  \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\r\n  \"severity\": \"High\",\r\n  \"assigned_to\": \"Infrastructure Team\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "BAD REQUEST",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 16:51:05 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "54"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Missing required fields: reported_by\"\n}"
+        },
+        {
+          "name": "Tickets_Post Data_default values",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Stored XSS on User Dashboard\",\r\n  \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\r\n  \"reported_by\": \"Jason\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "CREATED",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 17:08:26 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "384"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"L1 Ops Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-12 18:08:26\",\n    \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\n    \"reported_by\": \"Jason\",\n    \"severity\": \"Medium\",\n    \"status\": \"open\",\n    \"ticket_id\": 1,\n    \"title\": \"Stored XSS on User Dashboard\"\n}"
+        },
+        {
+          "name": "Tickets_Post Data_L1Ops",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Stored XSS on User Dashboard\",\r\n  \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\r\n  \"severity\": \"Medium\",\r\n  \"reported_by\": \"Jason\"\r\n}\r\n\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "CREATED",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 22:28:57 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "384"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"L1 Ops Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-12 23:28:57\",\n    \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\n    \"reported_by\": \"Jason\",\n    \"severity\": \"Medium\",\n    \"status\": \"open\",\n    \"ticket_id\": 3,\n    \"title\": \"Stored XSS on User Dashboard\"\n}"
+        },
+        {
+          "name": "POST_missed_empty values",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\",\r\n  \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\r\n  \"reported_by\": \"Nithyanantham\",\r\n  \"assigned_to\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "CREATED",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Jul 2026 00:17:31 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "451"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"L1 Ops Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-13 01:17:31\",\n    \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n    \"reported_by\": \"Nithyanantham\",\n    \"severity\": \"Medium\",\n    \"status\": \"open\",\n    \"ticket_id\": 4,\n    \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\"\n}"
+        },
+        {
+          "name": "Tickets_Post Data",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Stored XSS on User Dashboard\",\r\n  \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\r\n  \"reported_by\": \"Jason\",\r\n  \"assigned_to\": \"Marketing\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "BAD REQUEST",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:33:41 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "158"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Invalid assigned_to 'Marketing'. Should be one of: Security Team, Infrastructure Team, Frontend Team, Backend Team, L1 Ops Team, Network Ops\"\n}"
+        },
+        {
+          "name": "Tickets_Post_ERROR",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Stored XSS on User Dashboard\",\r\n  \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\r\n  \"reported_by\": \"Jason\",\r\n  \"assigned_to\": \"Marketing\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "BAD REQUEST",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:36:45 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "158"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Invalid assigned_to 'Marketing'. Should be one of: Security Team, Infrastructure Team, Frontend Team, Backend Team, L1 Ops Team, Network Ops\"\n}"
+        },
+        {
+          "name": "Tickets_Post_Status error",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Unencrypted Traffic on Virtualized RAN Interface\",\r\n  \"description\": \"Packet sniffing revealed plaintext configuration data being transmitted across the vRAN management interface.\",\r\n  \"severity\": \"Critical\",\r\n  \"reported_by\": \"David\",\r\n  \"assigned_to\": \"Network Ops\"\r\n  \"status\": \"Resolved\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "BAD REQUEST",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:39:20 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/html; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "180"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "<!doctype html><html lang=en><title>400 Bad Request</title><h1>Bad Request</h1><p>Failed to decode JSON object: Expecting &#39;,&#39; delimiter: line 7 column 3 (char 286)</p>"
+        }
+      ]
+    },
+    {
+      "name": "Tickets_Get Data",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/tickets",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "tickets"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Tickets_Get Data",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 11 Jul 2026 23:32:22 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "669"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 00:32:04\",\n        \"description\": \"Server running OpenSSL 1.0.2, end-of-life and unpatched\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"Medium\",\n        \"status\": \"open\",\n        \"ticket_id\": 1,\n        \"title\": \"Outdated OpenSSL version\"\n    },\n    {\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 00:32:17\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 2,\n        \"title\": \"SQL Injection in login form\"\n    }\n]"
+        },
+        {
+          "name": "Tickets_Get Data",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 11 Jul 2026 23:53:28 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "669"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 00:51:40\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\"\n    },\n    {\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 00:52:52\",\n        \"description\": \"Server running OpenSSL 1.0.2, end-of-life and unpatched\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"Medium\",\n        \"status\": \"open\",\n        \"ticket_id\": 2,\n        \"title\": \"Outdated OpenSSL version\"\n    }\n]"
+        },
+        {
+          "name": "Tickets_Get Data_all5",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 15:14:50 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1964"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 16:12:36\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\"\n    },\n    {\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 16:12:45\",\n        \"description\": \"Server running OpenSSL 1.0.2, end-of-life and unpatched\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"Medium\",\n        \"status\": \"open\",\n        \"ticket_id\": 2,\n        \"title\": \"Outdated OpenSSL version\"\n    },\n    {\n        \"assigned_to\": \"Frontend Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 16:14:21\",\n        \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\n        \"reported_by\": \"Jason\",\n        \"severity\": \"Medium\",\n        \"status\": \"open\",\n        \"ticket_id\": 3,\n        \"title\": \"Stored XSS on User Dashboard\"\n    },\n    {\n        \"assigned_to\": \"Network Ops\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 16:14:31\",\n        \"description\": \"Packet sniffing revealed plaintext configuration data being transmitted across the vRAN management interface.\",\n        \"reported_by\": \"David\",\n        \"severity\": \"Critical\",\n        \"status\": \"open\",\n        \"ticket_id\": 4,\n        \"title\": \"Unencrypted Traffic on Virtualized RAN Interface\"\n    },\n    {\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 16:14:40\",\n        \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 5,\n        \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\"\n    }\n]"
+        },
+        {
+          "name": "Tickets_Get Data_all5",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 15:49:08 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1964"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 16:47:49\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\"\n    },\n    {\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 16:48:05\",\n        \"description\": \"Server running OpenSSL 1.0.2, end-of-life and unpatched\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"Medium\",\n        \"status\": \"open\",\n        \"ticket_id\": 2,\n        \"title\": \"Outdated OpenSSL version\"\n    },\n    {\n        \"assigned_to\": \"Frontend Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 16:48:13\",\n        \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\n        \"reported_by\": \"Jason\",\n        \"severity\": \"Medium\",\n        \"status\": \"open\",\n        \"ticket_id\": 3,\n        \"title\": \"Stored XSS on User Dashboard\"\n    },\n    {\n        \"assigned_to\": \"Network Ops\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 16:48:22\",\n        \"description\": \"Packet sniffing revealed plaintext configuration data being transmitted across the vRAN management interface.\",\n        \"reported_by\": \"David\",\n        \"severity\": \"Critical\",\n        \"status\": \"open\",\n        \"ticket_id\": 4,\n        \"title\": \"Unencrypted Traffic on Virtualized RAN Interface\"\n    },\n    {\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-12 16:48:33\",\n        \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 5,\n        \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\"\n    }\n]"
+        },
+        {
+          "name": "Tickets_Get all tickets",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:43:03 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1547"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"date_reported\": \"2026-07-15 01:21:42\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null\n    },\n    {\n        \"ticket_id\": 2,\n        \"title\": \"Stored XSS on User Dashboard\",\n        \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\n        \"severity\": \"Medium\",\n        \"status\": \"open\",\n        \"date_reported\": \"2026-07-15 01:28:25\",\n        \"reported_by\": \"Jason\",\n        \"assigned_to\": \"L1 Ops Team\",\n        \"closed_date\": null\n    },\n    {\n        \"ticket_id\": 3,\n        \"title\": \"Stored XSS on User Dashboard\",\n        \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\n        \"severity\": \"Medium\",\n        \"status\": \"open\",\n        \"date_reported\": \"2026-07-15 01:37:31\",\n        \"reported_by\": \"Jason\",\n        \"assigned_to\": \"L1 Ops Team\",\n        \"closed_date\": null\n    },\n    {\n        \"ticket_id\": 4,\n        \"title\": \"Unencrypted Traffic on Virtualized RAN Interface\",\n        \"description\": \"Packet sniffing revealed plaintext configuration data being transmitted across the vRAN management interface.\",\n        \"severity\": \"Critical\",\n        \"status\": \"open\",\n        \"date_reported\": \"2026-07-15 01:39:59\",\n        \"reported_by\": \"David\",\n        \"assigned_to\": \"L1 Ops Team\",\n        \"closed_date\": null\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get_ticket_Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/tickets/10",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "tickets",
+            "10"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get_ticket_Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/2",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "2"
+              ]
+            }
+          },
+          "status": "NOT FOUND",
+          "code": 404,
+          "_postman_previewlanguage": "",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 11 Jul 2026 23:55:50 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "34"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"error\": \"Ticket not found\"\n}"
+        },
+        {
+          "name": "Get_ticket_Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/2",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 11 Jul 2026 23:56:35 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "319"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"Infrastructure Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-12 00:52:52\",\n    \"description\": \"Server running OpenSSL 1.0.2, end-of-life and unpatched\",\n    \"reported_by\": \"Nithyanantham\",\n    \"severity\": \"Medium\",\n    \"status\": \"open\",\n    \"ticket_id\": 2,\n    \"title\": \"Outdated OpenSSL version\"\n}"
+        },
+        {
+          "name": "Get_ticket_Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/1",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 11 Jul 2026 23:56:50 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "301"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"Security Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-12 00:51:40\",\n    \"description\": \"User input not sanitized on login endpoint\",\n    \"reported_by\": \"Nithyanantham\",\n    \"severity\": \"High\",\n    \"status\": \"open\",\n    \"ticket_id\": 1,\n    \"title\": \"SQL Injection in login form\"\n}"
+        },
+        {
+          "name": "Get_ticket_Id_1_new",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/1",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 15:15:39 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "301"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"Security Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-12 16:12:36\",\n    \"description\": \"User input not sanitized on login endpoint\",\n    \"reported_by\": \"Nithyanantham\",\n    \"severity\": \"High\",\n    \"status\": \"open\",\n    \"ticket_id\": 1,\n    \"title\": \"SQL Injection in login form\"\n}"
+        },
+        {
+          "name": "Get_ticket_Id3",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/3",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "3"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:45:40 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "384"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"ticket_id\": 3,\n    \"title\": \"Stored XSS on User Dashboard\",\n    \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\n    \"severity\": \"Medium\",\n    \"status\": \"open\",\n    \"date_reported\": \"2026-07-15 01:37:31\",\n    \"reported_by\": \"Jason\",\n    \"assigned_to\": \"L1 Ops Team\",\n    \"closed_date\": null\n}"
+        },
+        {
+          "name": "ticket not found",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/10",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "10"
+              ]
+            }
+          },
+          "status": "NOT FOUND",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:46:46 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "34"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Ticket not found\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "PUT_ticket_id",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"status\": \"On Progress\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/tickets/3",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "tickets",
+            "3"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "PUT_ticket_id",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\": \"In Progress\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/7",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "7"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 15:16:11 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "326"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"assigned_to\": \"Infrastructure Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-12 16:12:45\",\n    \"description\": \"Server running OpenSSL 1.0.2, end-of-life and unpatched\",\n    \"reported_by\": \"Nithyanantham\",\n    \"severity\": \"Medium\",\n    \"status\": \"In Progress\",\n    \"ticket_id\": 2,\n    \"title\": \"Outdated OpenSSL version\"\n}"
+        },
+        {
+          "name": "PUT_ticket_id5",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"assigned_to\": \"Infrastructure Team\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/5",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "5"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 23:25:45 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "457"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"Infrastructure Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-13 00:19:02\",\n    \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n    \"reported_by\": \"Nithyanantham\",\n    \"severity\": \"High\",\n    \"status\": \"open\",\n    \"ticket_id\": 5,\n    \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\"\n}"
+        },
+        {
+          "name": "PUT_ticket_id_close to open",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\": \"open\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/5",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "5"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Jul 2026 00:04:38 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "457"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"assigned_to\": \"Infrastructure Team\",\n    \"closed_date\": null,\n    \"date_reported\": \"2026-07-13 00:59:34\",\n    \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n    \"reported_by\": \"Nithyanantham\",\n    \"severity\": \"High\",\n    \"status\": \"open\",\n    \"ticket_id\": 5,\n    \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\"\n}"
+        },
+        {
+          "name": "status update_inprogress",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\": \"In Progress\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/1",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:48:57 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "308"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"ticket_id\": 1,\n    \"title\": \"SQL Injection in login form\",\n    \"description\": \"User input not sanitized on login endpoint\",\n    \"severity\": \"High\",\n    \"status\": \"In Progress\",\n    \"date_reported\": \"2026-07-15 01:21:42\",\n    \"reported_by\": \"Nithyanantham\",\n    \"assigned_to\": \"Security Team\",\n    \"closed_date\": null\n}"
+        },
+        {
+          "name": "Invalid Severity",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\": \"In Progress\" , \"severity\": \"Super\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/3",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "3"
+              ]
+            }
+          },
+          "status": "BAD REQUEST",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:52:45 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "89"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Invalid severity 'Super'. Should be one of: Low, Medium, High, Critical\"\n}"
+        },
+        {
+          "name": "Incorrect status",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\": \"On Progress\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/3",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "3"
+              ]
+            }
+          },
+          "status": "BAD REQUEST",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:54:11 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "93"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Invalid status 'On Progress'. Should be one of: open, In Progress, Resolved\"\n}"
+        },
+        {
+          "name": "incorrect assigned_to",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"assigned_to\": \"Infrastructure\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/3",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "3"
+              ]
+            }
+          },
+          "status": "BAD REQUEST",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:56:01 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "163"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Invalid assigned_to 'Infrastructure'. Should be one of: Security Team, Infrastructure Team, Frontend Team, Backend Team, L1 Ops Team, Network Ops\"\n}"
+        },
+        {
+          "name": "resolved ticket",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\": \"Resolved\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/3",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "3"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:57:17 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "413"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"ticket_id\": 3,\n    \"title\": \"Stored XSS on User Dashboard\",\n    \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\n    \"severity\": \"Medium\",\n    \"status\": \"Resolved\",\n    \"date_reported\": \"2026-07-15 01:37:31\",\n    \"reported_by\": \"Jason\",\n    \"assigned_to\": \"Infrastructure Team\",\n    \"closed_date\": \"2026-07-15 01:57:17\"\n}"
+        },
+        {
+          "name": "resolved to open",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\": \"open\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/3",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "3"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:58:28 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "392"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"ticket_id\": 3,\n    \"title\": \"Stored XSS on User Dashboard\",\n    \"description\": \"Malicious JavaScript payload can be injected into the profile update module, executing automatically when other users view the page.\",\n    \"severity\": \"Medium\",\n    \"status\": \"open\",\n    \"date_reported\": \"2026-07-15 01:37:31\",\n    \"reported_by\": \"Jason\",\n    \"assigned_to\": \"Infrastructure Team\",\n    \"closed_date\": null\n}"
+        },
+        {
+          "name": "Not found ticket update",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\": \"open\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/30",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "30"
+              ]
+            }
+          },
+          "status": "NOT FOUND",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 00:59:40 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "34"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Ticket not found\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "DELETE_ticket_id",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/tickets/6",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "tickets",
+            "6"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "DELETE_ticket_id_3",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/3",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "3"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Jul 2026 15:49:43 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "49"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Ticket 3 deleted successfully\"\n}"
+        },
+        {
+          "name": "DELETE_ticket_id2",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets/2",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 01:01:34 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "49"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Ticket 2 deleted successfully\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Report Summary",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/report/summary",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "report",
+            "summary"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Report Summary",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/report/summary",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "report",
+                "summary"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 01:15:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "181"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"total_tickets\": 7,\n    \"severity_summary\": {\n        \"High\": 3,\n        \"Medium\": 1,\n        \"Critical\": 2,\n        \"Low\": 1\n    },\n    \"status_summary\": {\n        \"In Progress\": 1,\n        \"open\": 6\n    }\n}"
+        },
+        {
+          "name": "Report Summary",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/report/summary",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "report",
+                "summary"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 01:15:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "181"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"total_tickets\": 7,\n    \"severity_summary\": {\n        \"High\": 3,\n        \"Medium\": 1,\n        \"Critical\": 2,\n        \"Low\": 1\n    },\n    \"status_summary\": {\n        \"In Progress\": 1,\n        \"open\": 6\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Search tickets",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/tickets?search=traffic",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "tickets"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "traffic"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "SORT SQL",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets?search=SQL",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "SQL"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Jul 2026 15:49:16 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "327"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-14 16:48:24\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\"\n    }\n]"
+        },
+        {
+          "name": "Search sql",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets?search=sql ",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "sql "
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 01:05:27 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "334"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"severity\": \"High\",\n        \"status\": \"In Progress\",\n        \"date_reported\": \"2026-07-15 01:21:42\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "FILTER Results",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/tickets?severity=High&status=open",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "tickets"
+          ],
+          "query": [
+            {
+              "key": "severity",
+              "value": "High"
+            },
+            {
+              "key": "status",
+              "value": "open"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "combined_filter search_severity",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets?severity=High",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ],
+              "query": [
+                {
+                  "key": "severity",
+                  "value": "High"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Jul 2026 16:41:19 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1234"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-14 17:39:58\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\"\n    },\n    {\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-14 17:40:35\",\n        \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 5,\n        \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\"\n    },\n    {\n        \"assigned_to\": \"Backend Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-14 17:40:43\",\n        \"description\": \"Manipulating the issue_id parameter in the GET request allows an unauthorized user to read vulnerability reports belonging to restricted projects.\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 6,\n        \"title\": \"IDOR in Issue Retrieval API\"\n    }\n]"
+        },
+        {
+          "name": "FILTER Results",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets?severity=High&status=Resolved",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ],
+              "query": [
+                {
+                  "key": "severity",
+                  "value": "High"
+                },
+                {
+                  "key": "status",
+                  "value": "Resolved"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Jul 2026 16:58:27 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1255"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": \"2026-07-14 17:58:01\",\n        \"date_reported\": \"2026-07-14 17:54:54\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"Resolved\",\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\"\n    },\n    {\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-14 17:55:36\",\n        \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 5,\n        \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\"\n    },\n    {\n        \"assigned_to\": \"Backend Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-14 17:55:45\",\n        \"description\": \"Manipulating the issue_id parameter in the GET request allows an unauthorized user to read vulnerability reports belonging to restricted projects.\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 6,\n        \"title\": \"IDOR in Issue Retrieval API\"\n    }\n]"
+        },
+        {
+          "name": "FILTER severity_status",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets?severity=High&status=open",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ],
+              "query": [
+                {
+                  "key": "severity",
+                  "value": "High"
+                },
+                {
+                  "key": "status",
+                  "value": "open"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Jul 2026 17:03:22 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "910"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-14 17:55:36\",\n        \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 5,\n        \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\"\n    },\n    {\n        \"assigned_to\": \"Backend Team\",\n        \"closed_date\": null,\n        \"date_reported\": \"2026-07-14 17:55:45\",\n        \"description\": \"Manipulating the issue_id parameter in the GET request allows an unauthorized user to read vulnerability reports belonging to restricted projects.\",\n        \"reported_by\": \"Nithyanantham\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"ticket_id\": 6,\n        \"title\": \"IDOR in Issue Retrieval API\"\n    }\n]"
+        },
+        {
+          "name": "FILTER open & High",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets?severity=High&status=open",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ],
+              "query": [
+                {
+                  "key": "severity",
+                  "value": "High"
+                },
+                {
+                  "key": "status",
+                  "value": "open"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 01:07:07 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "910"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"ticket_id\": 6,\n        \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\",\n        \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"date_reported\": \"2026-07-15 02:03:37\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null\n    },\n    {\n        \"ticket_id\": 7,\n        \"title\": \"IDOR in Issue Retrieval API\",\n        \"description\": \"Manipulating the issue_id parameter in the GET request allows an unauthorized user to read vulnerability reports belonging to restricted projects.\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"date_reported\": \"2026-07-15 02:06:42\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Backend Team\",\n        \"closed_date\": null\n    }\n]"
+        },
+        {
+          "name": "FILTER severity",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets?severity=High",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ],
+              "query": [
+                {
+                  "key": "severity",
+                  "value": "High"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 01:09:03 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1241"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"severity\": \"High\",\n        \"status\": \"In Progress\",\n        \"date_reported\": \"2026-07-15 01:21:42\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null\n    },\n    {\n        \"ticket_id\": 6,\n        \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\",\n        \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"date_reported\": \"2026-07-15 02:03:37\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null\n    },\n    {\n        \"ticket_id\": 7,\n        \"title\": \"IDOR in Issue Retrieval API\",\n        \"description\": \"Manipulating the issue_id parameter in the GET request allows an unauthorized user to read vulnerability reports belonging to restricted projects.\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"date_reported\": \"2026-07-15 02:06:42\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Backend Team\",\n        \"closed_date\": null\n    }\n]"
+        },
+        {
+          "name": "FILTER & Search",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets?severity=High&search=sql",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ],
+              "query": [
+                {
+                  "key": "severity",
+                  "value": "High"
+                },
+                {
+                  "key": "search",
+                  "value": "sql"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 01:10:20 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "334"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"severity\": \"High\",\n        \"status\": \"In Progress\",\n        \"date_reported\": \"2026-07-15 01:21:42\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "SORT",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/tickets?sort=date_reported&severity=High",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "tickets"
+          ],
+          "query": [
+            {
+              "key": "sort",
+              "value": "date_reported"
+            },
+            {
+              "key": "severity",
+              "value": "High"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "SORT_combined",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/tickets?sort=date_reported&severity=High",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "tickets"
+              ],
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "date_reported"
+                },
+                {
+                  "key": "severity",
+                  "value": "High"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.8 Python/3.14.6"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Jul 2026 01:11:53 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1241"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"ticket_id\": 1,\n        \"title\": \"SQL Injection in login form\",\n        \"description\": \"User input not sanitized on login endpoint\",\n        \"severity\": \"High\",\n        \"status\": \"In Progress\",\n        \"date_reported\": \"2026-07-15 01:21:42\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Security Team\",\n        \"closed_date\": null\n    },\n    {\n        \"ticket_id\": 6,\n        \"title\": \"Resource Exhaustion via Uncapped Hypervisor Threads\",\n        \"description\": \"Multi-core processing threads are not properly rate-limited in the lab environment, allowing a single tenant to consume all CPU resources and cause a denial of service.\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"date_reported\": \"2026-07-15 02:03:37\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Infrastructure Team\",\n        \"closed_date\": null\n    },\n    {\n        \"ticket_id\": 7,\n        \"title\": \"IDOR in Issue Retrieval API\",\n        \"description\": \"Manipulating the issue_id parameter in the GET request allows an unauthorized user to read vulnerability reports belonging to restricted projects.\",\n        \"severity\": \"High\",\n        \"status\": \"open\",\n        \"date_reported\": \"2026-07-15 02:06:42\",\n        \"reported_by\": \"Nithyanantham\",\n        \"assigned_to\": \"Backend Team\",\n        \"closed_date\": null\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "SORT_date",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/tickets?sort=date_reported",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "tickets"
+          ],
+          "query": [
+            {
+              "key": "sort",
+              "value": "date_reported"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
